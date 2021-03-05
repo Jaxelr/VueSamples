@@ -3,7 +3,8 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <nav>
       <router-link to='/'>Service</router-link>
-      <router-link to='/oidc'>Plugin</router-link>
+      <router-link to='/plugin'>Plugin</router-link>
+      <router-link to='/mixin'>Mixin</router-link>
     </nav>
     <br/>
     <router-view/>

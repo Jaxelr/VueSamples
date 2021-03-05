@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Using a Vue Plugin</p>
+    <p>Using a Mixin</p>
     <a href="#" class="btn btn-success" @click="getToken">Submit</a>
     <div v-if="loading">Loading...</div>
     {{ token }}
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'OidcPlugin',
+  name: 'OidcMixin',
   data()  {
      return {
       token: '',
@@ -21,7 +21,7 @@ export default {
         this.loading = true;
         this.token = '';
 
-        this.$Token.getAccessTokenNoParams()
+        this.getAccessToken()
         .then(response => this.token = response.access_token);
         
         this.loading = false;

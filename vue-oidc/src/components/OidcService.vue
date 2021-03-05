@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import getAccessToken from '../services/ApiService'
+import apiService from '../services/ApiService'
 
 export default {
   name: 'OidcService',
@@ -23,7 +23,7 @@ export default {
         this.loading = true;
         this.token = '';
 
-        getAccessToken(process.env.VUE_APP_TOKEN_URL, process.env.VUE_APP_CLIENT_ID, process.env.VUE_APP_CLIENT_SECRET, process.env.SCOPE)
+        apiService.getAccessToken(process.env.VUE_APP_TOKEN_URL, process.env.VUE_APP_CLIENT_ID, process.env.VUE_APP_CLIENT_SECRET, process.env.SCOPE)
         .then(response => this.token = response.access_token);
         
         this.loading = false;
